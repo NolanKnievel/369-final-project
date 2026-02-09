@@ -14,3 +14,8 @@
     Taxi demand responds unevenly to external shocks. Impact on different neighborhoods, and by extension different economic classes, will vary. 
 
     My hypothesis stems from past research and observation. Transportation access is different between social classes, and I'm curious to see how this is reflected in taxi data. 
+
+4. Dataset
+    I'm workign with the NYC Taxi and Limousine Commission trip record dataset. This contains trip records including timestamps, pickup/dropoff locationss, fares, and tips. I'm planning to analyze data from 2019. 
+
+Link: https://data.cityofnewyork.us/browse?Data-Collection_Data-Collection=TLC+Trip+Data&sortBy=relevance&pageSize=20&page=1
