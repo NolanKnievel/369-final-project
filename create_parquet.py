@@ -1,6 +1,12 @@
 import duckdb
+import pandas
+import numpy
 
-"""
+""""
+Example Row: 
+(2, '2018 Mar 10 11:04:35 AM', '2018 Mar 10 11:12:32 AM', 1, 1.31, 1, 'N', 151, 75, 2, 7.5, 0.0, 0.5, 0.0, 0.0, 0.3, 8.3)
+
+Table description: 
               column_name column_type null   key default extra
 0                VendorID      BIGINT  YES  None    None  None
 1    tpep_pickup_datetime   TIMESTAMP  YES  None    None  None
@@ -22,54 +28,54 @@ import duckdb
 17   congestion_surcharge      DOUBLE  YES  None    None  None
 18            airport_fee      DOUBLE  YES  None    None  None
 
+
 """
 
 
 
-# filter -  1 min< ride time < 15hrs
-# fare amount - positive
-# 0 < trip dist < 1000
-# 0 < passenger count 
-# 0 < tip_amount
-
-
-def create_sample(input_csv, output_csv):
-    print(f'creating random sample of {input_csv}')
-    
-    query = f"""
-    COPY (
-        SELECT *
-        FROM read_csv_auto('{input_csv}', thousands=',')
-        WHERE 
-            -- ride time between 1 minute and 15 hours
-            tpep_dropoff_datetime > tpep_pickup_datetime
-            AND (tpep_dropoff_datetime - tpep_pickup_datetime) 
-                BETWEEN INTERVAL 1 MINUTE AND INTERVAL 15 HOUR
-            
-            -- fare amount positive
-            AND fare_amount > 0
-            
-            -- trip distance bounds
-            AND trip_distance > 0
-            AND trip_distance < 1000
-            
-            -- passenger count positive
-            AND passenger_count > 0
-            
-            -- tip positive
-            AND tip_amount > 0
-
-        ORDER BY RANDOM()
-        LIMIT 20000
-    )
-    TO '{output_csv}'
-    WITH (HEADER, DELIMITER ',');
+def transform_data(input_csv):
+    query = """
+    COPY (SELECT * FROM read_csv_auto(?, thousands=',', ignore_errors=true))
+    TO 'data/2019_Yellow_Taxi_Trip_Data.parquet' (FORMAT PARQUET);
     """
 
+    duckdb.sql(query, params=[input_csv])
 
 
-    duckdb.query(query)
+# # transform_data('data/2018_Yellow_Taxi_Trip_Data_20260214.csv')
+# transform_data('data/2019_Yellow_Taxi_Trip_Data_20260219.csv')
 
 
+# df = duckdb.sql("""SELECT * FROM read_parquet('data/2019_Yellow_Taxi_Trip_Data.parquet') LIMIT 10""").df()
+# print(df)
 
-create_sample('data/2019_Yellow_Taxi_Trip_Data_20260219.csv', 'data/samples/2019_Yellow_Taxi_Trip_Data_Sample.csv')
+
+def filter_data(input_parquet, output_parquet):
+    print(f'filtering {input_parquet}')
+
+    query = f"""
+    COPY (
+        WITH cleaned AS (
+            SELECT *,
+                strptime(tpep_pickup_datetime, '%Y %b %d %I:%M:%S %p') AS pickup_ts,
+                strptime(tpep_dropoff_datetime, '%Y %b %d %I:%M:%S %p') AS dropoff_ts
+            FROM read_parquet('{input_parquet}')
+        )
+        SELECT *
+        FROM cleaned
+        WHERE 
+            dropoff_ts > pickup_ts
+            AND (dropoff_ts - pickup_ts)
+                BETWEEN INTERVAL 1 MINUTE AND INTERVAL 15 HOUR
+            AND fare_amount > 0
+            AND trip_distance > 0 AND trip_distance < 1000
+            AND passenger_count > 0
+            AND tip_amount > 0
+    )
+    TO '{output_parquet}' (FORMAT PARQUET);
+    """
+
+    duckdb.sql(query)
+
+
+filter_data('data/2018_Yellow_Taxi_Trip_Data.parquet', 'data/parquet/2018_Filtered_Yellow_Taxi_Trip_Data.parquet')
