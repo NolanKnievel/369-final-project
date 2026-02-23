@@ -57,8 +57,10 @@ def filter_data(input_parquet, output_parquet):
     COPY (
         WITH cleaned AS (
             SELECT *,
-                strptime(tpep_pickup_datetime, '%Y %b %d %I:%M:%S %p') AS pickup_ts,
-                strptime(tpep_dropoff_datetime, '%Y %b %d %I:%M:%S %p') AS dropoff_ts
+                -- strptime(tpep_pickup_datetime, '%Y %b %d %I:%M:%S %p') AS pickup_ts,
+                -- strptime(tpep_dropoff_datetime, '%Y %b %d %I:%M:%S %p') AS dropoff_ts
+                tpep_pickup_datetime as pickup_ts,
+                tpep_dropoff_datetime as dropoff_ts
             FROM read_parquet('{input_parquet}')
         )
         SELECT *
@@ -67,6 +69,8 @@ def filter_data(input_parquet, output_parquet):
             dropoff_ts > pickup_ts
             AND (dropoff_ts - pickup_ts)
                 BETWEEN INTERVAL 1 MINUTE AND INTERVAL 15 HOUR
+            -- occurs in 2019
+            AND pickup_ts >= '2019-01-01' AND pickup_ts < '2020-01-02'
             AND fare_amount > 0
             AND trip_distance > 0 AND trip_distance < 1000
             AND passenger_count > 0
@@ -78,4 +82,4 @@ def filter_data(input_parquet, output_parquet):
     duckdb.sql(query)
 
 
-filter_data('data/2018_Yellow_Taxi_Trip_Data.parquet', 'data/parquet/2018_Filtered_Yellow_Taxi_Trip_Data.parquet')
+filter_data('data/2019_Yellow_Taxi_Trip_Data.parquet', 'data/parquet/2019_Filtered_Yellow_Taxi_Trip_Data.parquet')

@@ -29,8 +29,10 @@ import pandas
 def main():
 
     query = f"""
-        SELECT *
-        FROM read_csv('data/2018_Yellow_Taxi_Trip_Data_Sample.csv')
+        SELECT tpep_pickup_datetime
+        FROM read_csv_auto('data/samples/2019_Yellow_Taxi_Trip_Data_4th_July_Sample_V3.csv', thousands=',')
+        ORDER BY tpep_pickup_datetime ASC
+        LIMIT 1
     """
 
     df = duckdb.query(query).df()
@@ -39,3 +41,29 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+"""
+
+Slowest days 2019
+july 3-7th
+sept 2, 8th
+april 21
+may 25, 26
+jan 21
+feb 17th
+
+
+Highest days 2019
+jan 13, 16, 22
+june 13
+sept 11
+Feb 2, 7, 28
+april 13
+march 6, 15
+
+
+"""
