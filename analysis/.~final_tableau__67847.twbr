@@ -1,0 +1,2904 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20253.26.0109.0333                               -->
+<workbook original-version='18.1' source-build='2025.3.2 (20253.26.0109.0333)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SpatialFileLayer />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='2019-07-04_zone_pickup_differences.csv+ (Multiple Connections)' inline='true' name='federated.0kf5c160czdgd31ag7rpv03vlcnb' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='2019-07-04_zone_pickup_differences' name='textscan.08geedt1qlk61t15e0yqb0xjl8gk'>
+            <connection class='textscan' directory='/Users/nolanknievel/CS/369/final-project/data' filename='2019-07-04_zone_pickup_differences.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='taxi_zones' name='ogrdirect.15jr9nc1s0y4sc14wqut10i3u4uf'>
+            <connection class='ogrdirect' directory='/Users/nolanknievel/CS/369/final-project/data/taxi_zones_shapefile' filename='taxi_zones.shp' password='' server='' tablename='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.08geedt1qlk61t15e0yqb0xjl8gk' name='2019-07-04_zone_pickup_differences.csv' table='[2019-07-04_zone_pickup_differences#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='zone' ordinal='0' />
+              <column datatype='integer' name='july4_trips' ordinal='1' />
+              <column datatype='real' name='expected_trips' ordinal='2' />
+              <column datatype='real' name='deviation' ordinal='3' />
+            </columns>
+          </relation>
+          <relation connection='ogrdirect.15jr9nc1s0y4sc14wqut10i3u4uf' name='taxi_zones.shp' table='[taxi_zones.shp]' type='table'>
+            <columns>
+              <column datatype='integer' name='OBJECTID' ordinal='0' />
+              <column datatype='real' name='Shape_Leng' ordinal='1' />
+              <column datatype='real' name='Shape_Area' ordinal='2' />
+              <column datatype='string' name='zone' ordinal='3' />
+              <column datatype='integer' name='LocationID' ordinal='4' />
+              <column datatype='string' name='borough' ordinal='5' />
+              <column datatype='spatial' name='Geometry' ordinal='6' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Geometry]' value='[taxi_zones.shp].[Geometry]' />
+          <map key='[LocationID]' value='[taxi_zones.shp].[LocationID]' />
+          <map key='[OBJECTID]' value='[taxi_zones.shp].[OBJECTID]' />
+          <map key='[Shape_Area]' value='[taxi_zones.shp].[Shape_Area]' />
+          <map key='[Shape_Leng]' value='[taxi_zones.shp].[Shape_Leng]' />
+          <map key='[borough]' value='[taxi_zones.shp].[borough]' />
+          <map key='[deviation]' value='[2019-07-04_zone_pickup_differences.csv].[deviation]' />
+          <map key='[expected_trips]' value='[2019-07-04_zone_pickup_differences.csv].[expected_trips]' />
+          <map key='[july4_trips]' value='[2019-07-04_zone_pickup_differences.csv].[july4_trips]' />
+          <map key='[zone (taxi_zones.shp)]' value='[taxi_zones.shp].[zone]' />
+          <map key='[zone]' value='[2019-07-04_zone_pickup_differences.csv].[zone]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[2019-07-04_zone_pickup_differences.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zone</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[zone]</local-name>
+            <parent-name>[2019-07-04_zone_pickup_differences.csv]</parent-name>
+            <remote-alias>zone</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>july4_trips</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[july4_trips]</local-name>
+            <parent-name>[2019-07-04_zone_pickup_differences.csv]</parent-name>
+            <remote-alias>july4_trips</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>expected_trips</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[expected_trips]</local-name>
+            <parent-name>[2019-07-04_zone_pickup_differences.csv]</parent-name>
+            <remote-alias>expected_trips</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>deviation</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[deviation]</local-name>
+            <parent-name>[2019-07-04_zone_pickup_differences.csv]</parent-name>
+            <remote-alias>deviation</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OBJECTID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OBJECTID]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>OBJECTID</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shape_Leng</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shape_Leng]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>Shape_Leng</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shape_Area</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shape_Area]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>Shape_Area</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zone</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[zone (taxi_zones.shp)]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>zone</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LocationID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LocationID]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>LocationID</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>borough</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[borough]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>borough</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='percent_deviation' datatype='real' name='[Calculation_2319947838595073]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='100*([july4_trips]-[expected_trips]) / [expected_trips]' />
+      </column>
+      <column caption='Location ID' datatype='integer' name='[LocationID]' role='dimension' type='ordinal' />
+      <column caption='Objectid' datatype='integer' name='[OBJECTID]' role='measure' type='quantitative' />
+      <column caption='Shape Area' datatype='real' name='[Shape_Area]' role='measure' type='quantitative' />
+      <column caption='Shape Leng' datatype='real' name='[Shape_Leng]' role='measure' type='quantitative' />
+      <column caption='2019-07-04_zone_pickup_differences.csv' datatype='table' name='[__tableau_internal_object_id__].[2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A]' role='measure' type='quantitative' />
+      <column caption='taxi_zones.shp' datatype='table' name='[__tableau_internal_object_id__].[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]' role='measure' type='quantitative' />
+      <column caption='Borough' datatype='string' name='[borough]' role='dimension' type='nominal' />
+      <column caption='Deviation' datatype='real' name='[deviation]' role='measure' type='quantitative' />
+      <column caption='Expected Trips' datatype='real' name='[expected_trips]' role='measure' type='quantitative' />
+      <column caption='July4 Trips' datatype='integer' name='[july4_trips]' role='measure' type='quantitative' />
+      <column caption='Zone (Taxi Zones.Shp)' datatype='string' name='[zone (taxi_zones.shp)]' role='dimension' type='nominal' />
+      <column caption='Zone' datatype='integer' name='[zone]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/9k/q9k9k3w139xcvty2bxq_tczr0000gn/T/tableau-temp/#TableauTemp_0b2c3ws0vfjooy1a8l3ka1s21kue.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/09/2026 01:45:53 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A' table='[Extract].[2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A]' type='table' />
+            <relation name='taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A' table='[Extract].[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]' type='table' />
+          </relation>
+          <cols>
+            <map key='[Geometry]' value='[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A].[Geometry]' />
+            <map key='[LocationID]' value='[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A].[LocationID]' />
+            <map key='[OBJECTID]' value='[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A].[OBJECTID]' />
+            <map key='[Shape_Area]' value='[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A].[Shape_Area]' />
+            <map key='[Shape_Leng]' value='[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A].[Shape_Leng]' />
+            <map key='[borough]' value='[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A].[borough]' />
+            <map key='[deviation]' value='[2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A].[deviation]' />
+            <map key='[expected_trips]' value='[2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A].[expected_trips]' />
+            <map key='[july4_trips]' value='[2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A].[july4_trips]' />
+            <map key='[zone (taxi_zones.shp)]' value='[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A].[zone]' />
+            <map key='[zone]' value='[2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A].[zone]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>zone</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[zone]</local-name>
+              <parent-name>[2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A]</parent-name>
+              <remote-alias>zone</remote-alias>
+              <ordinal>0</ordinal>
+              <family>2019-07-04_zone_pickup_differences.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>159</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>july4_trips</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[july4_trips]</local-name>
+              <parent-name>[2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A]</parent-name>
+              <remote-alias>july4_trips</remote-alias>
+              <ordinal>1</ordinal>
+              <family>2019-07-04_zone_pickup_differences.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>96</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>expected_trips</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[expected_trips]</local-name>
+              <parent-name>[2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A]</parent-name>
+              <remote-alias>expected_trips</remote-alias>
+              <ordinal>2</ordinal>
+              <family>2019-07-04_zone_pickup_differences.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>156</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>deviation</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[deviation]</local-name>
+              <parent-name>[2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A]</parent-name>
+              <remote-alias>deviation</remote-alias>
+              <ordinal>3</ordinal>
+              <family>2019-07-04_zone_pickup_differences.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>155</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>OBJECTID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[OBJECTID]</local-name>
+              <parent-name>[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]</parent-name>
+              <remote-alias>OBJECTID</remote-alias>
+              <ordinal>4</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shape_Leng</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Shape_Leng]</local-name>
+              <parent-name>[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]</parent-name>
+              <remote-alias>Shape_Leng</remote-alias>
+              <ordinal>5</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shape_Area</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Shape_Area]</local-name>
+              <parent-name>[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]</parent-name>
+              <remote-alias>Shape_Area</remote-alias>
+              <ordinal>6</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>zone</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[zone (taxi_zones.shp)]</local-name>
+              <parent-name>[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]</parent-name>
+              <remote-alias>zone</remote-alias>
+              <ordinal>7</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>260</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LocationID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[LocationID]</local-name>
+              <parent-name>[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]</parent-name>
+              <remote-alias>LocationID</remote-alias>
+              <ordinal>8</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>260</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>borough</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[borough]</local-name>
+              <parent-name>[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]</parent-name>
+              <remote-alias>borough</remote-alias>
+              <ordinal>9</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Geometry</remote-name>
+              <remote-type>128</remote-type>
+              <local-name>[Geometry]</local-name>
+              <parent-name>[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]</parent-name>
+              <remote-alias>Geometry</remote-alias>
+              <ordinal>10</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>spatial</local-type>
+              <aggregation>Collect</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='zone' />
+        <field-sort-custom-order field='july4_trips' />
+        <field-sort-custom-order field='expected_trips' />
+        <field-sort-custom-order field='Calculation_2319947838595073' />
+        <field-sort-custom-order field='deviation' />
+      </field-sort-info>
+      <object-graph>
+        <objects>
+          <object caption='2019-07-04_zone_pickup_differences.csv' id='2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A'>
+            <properties context=''>
+              <relation connection='textscan.08geedt1qlk61t15e0yqb0xjl8gk' name='2019-07-04_zone_pickup_differences.csv' table='[2019-07-04_zone_pickup_differences#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='zone' ordinal='0' />
+                  <column datatype='integer' name='july4_trips' ordinal='1' />
+                  <column datatype='real' name='expected_trips' ordinal='2' />
+                  <column datatype='real' name='deviation' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A' table='[Extract].[2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A]' type='table' />
+            </properties>
+          </object>
+          <object caption='taxi_zones.shp' id='taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A'>
+            <properties context=''>
+              <relation connection='ogrdirect.15jr9nc1s0y4sc14wqut10i3u4uf' name='taxi_zones.shp' table='[taxi_zones.shp]' type='table'>
+                <columns>
+                  <column datatype='integer' name='OBJECTID' ordinal='0' />
+                  <column datatype='real' name='Shape_Leng' ordinal='1' />
+                  <column datatype='real' name='Shape_Area' ordinal='2' />
+                  <column datatype='string' name='zone' ordinal='3' />
+                  <column datatype='integer' name='LocationID' ordinal='4' />
+                  <column datatype='string' name='borough' ordinal='5' />
+                  <column datatype='spatial' name='Geometry' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A' table='[Extract].[taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[zone]' />
+              <expression op='[LocationID]' />
+            </expression>
+            <first-end-point object-id='2019-07-04_zone_pickup_differences.csv_8FE7AA9A6EB24239B0E4DCFC3FDDDE9A' />
+            <second-end-point object-id='taxi_zones.shp_4E374EDA3216458B9CB49064D6D7B63A' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+    <datasource caption='2019-10-31_zone_dropoff_differences.csv+ (Multiple Connections)' inline='true' name='federated.1hzk2v31lj2k0y1fqj0ep1uofj9x' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='2019-10-31_zone_dropoff_differences' name='textscan.1ltkxi20sjr8ic1fhbd7m1lqjovp'>
+            <connection class='textscan' directory='/Users/nolanknievel/CS/369/final-project/data' filename='2019-10-31_zone_dropoff_differences.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='taxi_zones' name='ogrdirect.0ocig7g06hgjjr1c5r6o60mhowso'>
+            <connection class='ogrdirect' directory='/Users/nolanknievel/CS/369/final-project/data/taxi_zones_shapefile' filename='taxi_zones.shp' password='' server='' tablename='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.1ltkxi20sjr8ic1fhbd7m1lqjovp' name='2019-10-31_zone_dropoff_differences.csv' table='[2019-10-31_zone_dropoff_differences#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='zone' ordinal='0' />
+              <column datatype='integer' name='july4_trips' ordinal='1' />
+              <column datatype='real' name='expected_trips' ordinal='2' />
+              <column datatype='real' name='deviation' ordinal='3' />
+            </columns>
+          </relation>
+          <relation connection='ogrdirect.0ocig7g06hgjjr1c5r6o60mhowso' name='taxi_zones.shp' table='[taxi_zones.shp]' type='table'>
+            <columns>
+              <column datatype='integer' name='OBJECTID' ordinal='0' />
+              <column datatype='real' name='Shape_Leng' ordinal='1' />
+              <column datatype='real' name='Shape_Area' ordinal='2' />
+              <column datatype='string' name='zone' ordinal='3' />
+              <column datatype='integer' name='LocationID' ordinal='4' />
+              <column datatype='string' name='borough' ordinal='5' />
+              <column datatype='spatial' name='Geometry' ordinal='6' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Geometry]' value='[taxi_zones.shp].[Geometry]' />
+          <map key='[LocationID]' value='[taxi_zones.shp].[LocationID]' />
+          <map key='[OBJECTID]' value='[taxi_zones.shp].[OBJECTID]' />
+          <map key='[Shape_Area]' value='[taxi_zones.shp].[Shape_Area]' />
+          <map key='[Shape_Leng]' value='[taxi_zones.shp].[Shape_Leng]' />
+          <map key='[borough]' value='[taxi_zones.shp].[borough]' />
+          <map key='[deviation]' value='[2019-10-31_zone_dropoff_differences.csv].[deviation]' />
+          <map key='[expected_trips]' value='[2019-10-31_zone_dropoff_differences.csv].[expected_trips]' />
+          <map key='[july4_trips]' value='[2019-10-31_zone_dropoff_differences.csv].[july4_trips]' />
+          <map key='[zone (taxi_zones.shp)]' value='[taxi_zones.shp].[zone]' />
+          <map key='[zone]' value='[2019-10-31_zone_dropoff_differences.csv].[zone]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[2019-10-31_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zone</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[zone]</local-name>
+            <parent-name>[2019-10-31_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias>zone</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>july4_trips</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[july4_trips]</local-name>
+            <parent-name>[2019-10-31_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias>july4_trips</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>expected_trips</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[expected_trips]</local-name>
+            <parent-name>[2019-10-31_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias>expected_trips</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>deviation</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[deviation]</local-name>
+            <parent-name>[2019-10-31_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias>deviation</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OBJECTID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OBJECTID]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>OBJECTID</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shape_Leng</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shape_Leng]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>Shape_Leng</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shape_Area</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shape_Area]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>Shape_Area</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zone</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[zone (taxi_zones.shp)]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>zone</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LocationID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LocationID]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>LocationID</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>borough</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[borough]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>borough</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='percent_deviation' datatype='real' name='[Calculation_2319947842039811]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='100*([july4_trips] - [expected_trips]) / [expected_trips]' />
+      </column>
+      <column caption='Location ID' datatype='integer' name='[LocationID]' role='dimension' type='ordinal' />
+      <column caption='Objectid' datatype='integer' name='[OBJECTID]' role='measure' type='quantitative' />
+      <column caption='Shape Area' datatype='real' name='[Shape_Area]' role='measure' type='quantitative' />
+      <column caption='Shape Leng' datatype='real' name='[Shape_Leng]' role='measure' type='quantitative' />
+      <column caption='2019-10-31_zone_dropoff_differences.csv' datatype='table' name='[__tableau_internal_object_id__].[2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA]' role='measure' type='quantitative' />
+      <column caption='taxi_zones.shp' datatype='table' name='[__tableau_internal_object_id__].[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]' role='measure' type='quantitative' />
+      <column caption='Borough' datatype='string' name='[borough]' role='dimension' type='nominal' />
+      <column caption='Deviation' datatype='real' name='[deviation]' role='measure' type='quantitative' />
+      <column caption='Expected Trips' datatype='real' name='[expected_trips]' role='measure' type='quantitative' />
+      <column caption='actual_trips' datatype='integer' name='[july4_trips]' role='measure' type='quantitative' />
+      <column caption='Zone (Taxi Zones.Shp)' datatype='string' name='[zone (taxi_zones.shp)]' role='dimension' type='nominal' />
+      <column caption='Zone' datatype='integer' name='[zone]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/9k/q9k9k3w139xcvty2bxq_tczr0000gn/T/tableau-temp/#TableauTemp_18flm5202o5imx108zmzg13rnhv5.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/09/2026 08:45:58 PM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA' table='[Extract].[2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA]' type='table' />
+            <relation name='taxi_zones.shp_18740CAF777B4728B8B8818157878DAB' table='[Extract].[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]' type='table' />
+          </relation>
+          <cols>
+            <map key='[Geometry]' value='[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB].[Geometry]' />
+            <map key='[LocationID]' value='[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB].[LocationID]' />
+            <map key='[OBJECTID]' value='[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB].[OBJECTID]' />
+            <map key='[Shape_Area]' value='[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB].[Shape_Area]' />
+            <map key='[Shape_Leng]' value='[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB].[Shape_Leng]' />
+            <map key='[borough]' value='[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB].[borough]' />
+            <map key='[deviation]' value='[2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA].[deviation]' />
+            <map key='[expected_trips]' value='[2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA].[expected_trips]' />
+            <map key='[july4_trips]' value='[2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA].[july4_trips]' />
+            <map key='[zone (taxi_zones.shp)]' value='[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB].[zone]' />
+            <map key='[zone]' value='[2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA].[zone]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>zone</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[zone]</local-name>
+              <parent-name>[2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA]</parent-name>
+              <remote-alias>zone</remote-alias>
+              <ordinal>0</ordinal>
+              <family>2019-10-31_zone_dropoff_differences.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>164</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>july4_trips</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[july4_trips]</local-name>
+              <parent-name>[2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA]</parent-name>
+              <remote-alias>july4_trips</remote-alias>
+              <ordinal>1</ordinal>
+              <family>2019-10-31_zone_dropoff_differences.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>101</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>expected_trips</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[expected_trips]</local-name>
+              <parent-name>[2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA]</parent-name>
+              <remote-alias>expected_trips</remote-alias>
+              <ordinal>2</ordinal>
+              <family>2019-10-31_zone_dropoff_differences.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>154</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>deviation</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[deviation]</local-name>
+              <parent-name>[2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA]</parent-name>
+              <remote-alias>deviation</remote-alias>
+              <ordinal>3</ordinal>
+              <family>2019-10-31_zone_dropoff_differences.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>156</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>OBJECTID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[OBJECTID]</local-name>
+              <parent-name>[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]</parent-name>
+              <remote-alias>OBJECTID</remote-alias>
+              <ordinal>4</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shape_Leng</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Shape_Leng]</local-name>
+              <parent-name>[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]</parent-name>
+              <remote-alias>Shape_Leng</remote-alias>
+              <ordinal>5</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shape_Area</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Shape_Area]</local-name>
+              <parent-name>[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]</parent-name>
+              <remote-alias>Shape_Area</remote-alias>
+              <ordinal>6</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>zone</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[zone (taxi_zones.shp)]</local-name>
+              <parent-name>[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]</parent-name>
+              <remote-alias>zone</remote-alias>
+              <ordinal>7</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>260</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LocationID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[LocationID]</local-name>
+              <parent-name>[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]</parent-name>
+              <remote-alias>LocationID</remote-alias>
+              <ordinal>8</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>260</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>borough</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[borough]</local-name>
+              <parent-name>[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]</parent-name>
+              <remote-alias>borough</remote-alias>
+              <ordinal>9</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Geometry</remote-name>
+              <remote-type>128</remote-type>
+              <local-name>[Geometry]</local-name>
+              <parent-name>[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]</parent-name>
+              <remote-alias>Geometry</remote-alias>
+              <ordinal>10</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>spatial</local-type>
+              <aggregation>Collect</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='OBJECTID' />
+        <field-sort-custom-order field='Shape_Leng' />
+        <field-sort-custom-order field='Shape_Area' />
+        <field-sort-custom-order field='zone (taxi_zones.shp)' />
+        <field-sort-custom-order field='LocationID' />
+        <field-sort-custom-order field='borough' />
+        <field-sort-custom-order field='Geometry' />
+      </field-sort-info>
+      <object-graph>
+        <objects>
+          <object caption='2019-10-31_zone_dropoff_differences.csv' id='2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA'>
+            <properties context=''>
+              <relation connection='textscan.1ltkxi20sjr8ic1fhbd7m1lqjovp' name='2019-10-31_zone_dropoff_differences.csv' table='[2019-10-31_zone_dropoff_differences#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='zone' ordinal='0' />
+                  <column datatype='integer' name='july4_trips' ordinal='1' />
+                  <column datatype='real' name='expected_trips' ordinal='2' />
+                  <column datatype='real' name='deviation' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA' table='[Extract].[2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA]' type='table' />
+            </properties>
+          </object>
+          <object caption='taxi_zones.shp' id='taxi_zones.shp_18740CAF777B4728B8B8818157878DAB'>
+            <properties context=''>
+              <relation connection='ogrdirect.0ocig7g06hgjjr1c5r6o60mhowso' name='taxi_zones.shp' table='[taxi_zones.shp]' type='table'>
+                <columns>
+                  <column datatype='integer' name='OBJECTID' ordinal='0' />
+                  <column datatype='real' name='Shape_Leng' ordinal='1' />
+                  <column datatype='real' name='Shape_Area' ordinal='2' />
+                  <column datatype='string' name='zone' ordinal='3' />
+                  <column datatype='integer' name='LocationID' ordinal='4' />
+                  <column datatype='string' name='borough' ordinal='5' />
+                  <column datatype='spatial' name='Geometry' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='taxi_zones.shp_18740CAF777B4728B8B8818157878DAB' table='[Extract].[taxi_zones.shp_18740CAF777B4728B8B8818157878DAB]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[zone]' />
+              <expression op='[LocationID]' />
+            </expression>
+            <first-end-point object-id='2019-10-31_zone_dropoff_differences.csv_5ECE60F499754EB3884D2388BE0370FA' />
+            <second-end-point object-id='taxi_zones.shp_18740CAF777B4728B8B8818157878DAB' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+    <datasource caption='2019-12-31_zone_pickup_differences.csv+ (Multiple Connections)' inline='true' name='federated.1km069n05nsyn0105x75c1n9pmja' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='taxi_zones' name='ogrdirect.1c75p2c161qbcu16mj2du1gylpgd'>
+            <connection class='ogrdirect' directory='/Users/nolanknievel/CS/369/final-project/data/taxi_zones_shapefile' filename='taxi_zones.shp' password='' server='' tablename='' />
+          </named-connection>
+          <named-connection caption='2019-12-31_zone_dropoff_differences' name='textscan.05w1sta0zix1fq1drssur1idhilc'>
+            <connection class='textscan' directory='/Users/nolanknievel/CS/369/final-project/data' filename='2019-12-31_zone_dropoff_differences.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.05w1sta0zix1fq1drssur1idhilc' name='2019-12-31_zone_dropoff_differences.csv' table='[2019-12-31_zone_dropoff_differences#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='zone' ordinal='0' />
+              <column datatype='integer' name='actual_trips' ordinal='1' />
+              <column datatype='real' name='expected_trips' ordinal='2' />
+              <column datatype='real' name='deviation' ordinal='3' />
+            </columns>
+          </relation>
+          <relation connection='ogrdirect.1c75p2c161qbcu16mj2du1gylpgd' name='taxi_zones.shp' table='[taxi_zones.shp]' type='table'>
+            <columns>
+              <column datatype='integer' name='OBJECTID' ordinal='0' />
+              <column datatype='real' name='Shape_Leng' ordinal='1' />
+              <column datatype='real' name='Shape_Area' ordinal='2' />
+              <column datatype='string' name='zone' ordinal='3' />
+              <column datatype='integer' name='LocationID' ordinal='4' />
+              <column datatype='string' name='borough' ordinal='5' />
+              <column datatype='spatial' name='Geometry' ordinal='6' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Geometry]' value='[taxi_zones.shp].[Geometry]' />
+          <map key='[LocationID]' value='[taxi_zones.shp].[LocationID]' />
+          <map key='[OBJECTID]' value='[taxi_zones.shp].[OBJECTID]' />
+          <map key='[Shape_Area]' value='[taxi_zones.shp].[Shape_Area]' />
+          <map key='[Shape_Leng]' value='[taxi_zones.shp].[Shape_Leng]' />
+          <map key='[actual_trips]' value='[2019-12-31_zone_dropoff_differences.csv].[actual_trips]' />
+          <map key='[borough]' value='[taxi_zones.shp].[borough]' />
+          <map key='[deviation]' value='[2019-12-31_zone_dropoff_differences.csv].[deviation]' />
+          <map key='[expected_trips]' value='[2019-12-31_zone_dropoff_differences.csv].[expected_trips]' />
+          <map key='[zone (taxi_zones.shp)]' value='[taxi_zones.shp].[zone]' />
+          <map key='[zone]' value='[2019-12-31_zone_dropoff_differences.csv].[zone]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[2019-12-31_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zone</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[zone]</local-name>
+            <parent-name>[2019-12-31_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias>zone</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>actual_trips</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[actual_trips]</local-name>
+            <parent-name>[2019-12-31_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias>actual_trips</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>expected_trips</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[expected_trips]</local-name>
+            <parent-name>[2019-12-31_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias>expected_trips</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>deviation</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[deviation]</local-name>
+            <parent-name>[2019-12-31_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias>deviation</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OBJECTID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OBJECTID]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>OBJECTID</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shape_Leng</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shape_Leng]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>Shape_Leng</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shape_Area</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shape_Area]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>Shape_Area</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zone</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[zone (taxi_zones.shp)]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>zone</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LocationID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LocationID]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>LocationID</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>borough</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[borough]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>borough</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='percent_deviation' datatype='real' name='[Calculation_2319947843715076]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='100*([actual_trips]-[expected_trips]) / [expected_trips]' />
+      </column>
+      <column caption='Location ID' datatype='integer' name='[LocationID]' role='dimension' type='ordinal' />
+      <column caption='Objectid' datatype='integer' name='[OBJECTID]' role='measure' type='quantitative' />
+      <column caption='Shape Area' datatype='real' name='[Shape_Area]' role='measure' type='quantitative' />
+      <column caption='Shape Leng' datatype='real' name='[Shape_Leng]' role='measure' type='quantitative' />
+      <column caption='2019-12-31_zone_dropoff_differences.csv' datatype='table' name='[__tableau_internal_object_id__].[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E]' role='measure' type='quantitative' />
+      <column caption='taxi_zones.shp' datatype='table' name='[__tableau_internal_object_id__].[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]' role='measure' type='quantitative' />
+      <column caption='Borough' datatype='string' name='[borough]' role='dimension' type='nominal' />
+      <column caption='Deviation' datatype='real' name='[deviation]' role='measure' type='quantitative' />
+      <column caption='Expected Trips' datatype='real' name='[expected_trips]' role='measure' type='quantitative' />
+      <column caption='Zone (Taxi Zones.Shp)' datatype='string' name='[zone (taxi_zones.shp)]' role='dimension' type='nominal' />
+      <column caption='Zone' datatype='integer' name='[zone]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/9k/q9k9k3w139xcvty2bxq_tczr0000gn/T/tableau-temp/#TableauTemp_1vyuzmf1ywd3f31836f4k1o46c3m.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/10/2026 04:32:48 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E' table='[Extract].[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E]' type='table' />
+            <relation name='taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F' table='[Extract].[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]' type='table' />
+          </relation>
+          <cols>
+            <map key='[Geometry]' value='[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F].[Geometry]' />
+            <map key='[LocationID]' value='[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F].[LocationID]' />
+            <map key='[OBJECTID]' value='[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F].[OBJECTID]' />
+            <map key='[Shape_Area]' value='[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F].[Shape_Area]' />
+            <map key='[Shape_Leng]' value='[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F].[Shape_Leng]' />
+            <map key='[actual_trips]' value='[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E].[actual_trips]' />
+            <map key='[borough]' value='[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F].[borough]' />
+            <map key='[deviation]' value='[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E].[deviation]' />
+            <map key='[expected_trips]' value='[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E].[expected_trips]' />
+            <map key='[zone (taxi_zones.shp)]' value='[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F].[zone]' />
+            <map key='[zone]' value='[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E].[zone]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>zone</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[zone]</local-name>
+              <parent-name>[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E]</parent-name>
+              <remote-alias>zone</remote-alias>
+              <ordinal>0</ordinal>
+              <family>2019-12-31_zone_dropoff_differences.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>163</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>actual_trips</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[actual_trips]</local-name>
+              <parent-name>[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E]</parent-name>
+              <remote-alias>actual_trips</remote-alias>
+              <ordinal>1</ordinal>
+              <family>2019-12-31_zone_dropoff_differences.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>96</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>expected_trips</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[expected_trips]</local-name>
+              <parent-name>[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E]</parent-name>
+              <remote-alias>expected_trips</remote-alias>
+              <ordinal>2</ordinal>
+              <family>2019-12-31_zone_dropoff_differences.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>159</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>deviation</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[deviation]</local-name>
+              <parent-name>[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E]</parent-name>
+              <remote-alias>deviation</remote-alias>
+              <ordinal>3</ordinal>
+              <family>2019-12-31_zone_dropoff_differences.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>161</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>OBJECTID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[OBJECTID]</local-name>
+              <parent-name>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</parent-name>
+              <remote-alias>OBJECTID</remote-alias>
+              <ordinal>4</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shape_Leng</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Shape_Leng]</local-name>
+              <parent-name>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</parent-name>
+              <remote-alias>Shape_Leng</remote-alias>
+              <ordinal>5</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shape_Area</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Shape_Area]</local-name>
+              <parent-name>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</parent-name>
+              <remote-alias>Shape_Area</remote-alias>
+              <ordinal>6</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>zone</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[zone (taxi_zones.shp)]</local-name>
+              <parent-name>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</parent-name>
+              <remote-alias>zone</remote-alias>
+              <ordinal>7</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>260</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LocationID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[LocationID]</local-name>
+              <parent-name>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</parent-name>
+              <remote-alias>LocationID</remote-alias>
+              <ordinal>8</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>260</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>borough</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[borough]</local-name>
+              <parent-name>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</parent-name>
+              <remote-alias>borough</remote-alias>
+              <ordinal>9</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Geometry</remote-name>
+              <remote-type>128</remote-type>
+              <local-name>[Geometry]</local-name>
+              <parent-name>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</parent-name>
+              <remote-alias>Geometry</remote-alias>
+              <ordinal>10</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>spatial</local-type>
+              <aggregation>Collect</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='OBJECTID' />
+        <field-sort-custom-order field='Shape_Leng' />
+        <field-sort-custom-order field='Shape_Area' />
+        <field-sort-custom-order field='zone (taxi_zones.shp)' />
+        <field-sort-custom-order field='LocationID' />
+        <field-sort-custom-order field='borough' />
+        <field-sort-custom-order field='Geometry' />
+      </field-sort-info>
+      <object-graph>
+        <objects>
+          <object caption='2019-12-31_zone_dropoff_differences.csv' id='2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E'>
+            <properties context=''>
+              <relation connection='textscan.05w1sta0zix1fq1drssur1idhilc' name='2019-12-31_zone_dropoff_differences.csv' table='[2019-12-31_zone_dropoff_differences#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='zone' ordinal='0' />
+                  <column datatype='integer' name='actual_trips' ordinal='1' />
+                  <column datatype='real' name='expected_trips' ordinal='2' />
+                  <column datatype='real' name='deviation' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E' table='[Extract].[2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E]' type='table' />
+            </properties>
+          </object>
+          <object caption='taxi_zones.shp' id='taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F'>
+            <properties context=''>
+              <relation connection='ogrdirect.1c75p2c161qbcu16mj2du1gylpgd' name='taxi_zones.shp' table='[taxi_zones.shp]' type='table'>
+                <columns>
+                  <column datatype='integer' name='OBJECTID' ordinal='0' />
+                  <column datatype='real' name='Shape_Leng' ordinal='1' />
+                  <column datatype='real' name='Shape_Area' ordinal='2' />
+                  <column datatype='string' name='zone' ordinal='3' />
+                  <column datatype='integer' name='LocationID' ordinal='4' />
+                  <column datatype='string' name='borough' ordinal='5' />
+                  <column datatype='spatial' name='Geometry' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F' table='[Extract].[taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[zone]' />
+              <expression op='[LocationID]' />
+            </expression>
+            <first-end-point object-id='2019-12-31_zone_dropoff_differences.csv_17EE6DD536AE4C98972DE9A91B83BF7E' />
+            <second-end-point object-id='taxi_zones.shp_EC047FB4A2FB44BDA7E622BC120D057F' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+    <datasource caption='2019-01-01_zone_dropoff_differences.csv+ (Multiple Connections)' inline='true' name='federated.1frj9dn0lr16tb18jzglt0tmg2e8' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='2019-01-01_zone_dropoff_differences' name='textscan.1uawyan0m6hh5o1ewcqq71loxuea'>
+            <connection class='textscan' directory='/Users/nolanknievel/CS/369/final-project/data' filename='2019-01-01_zone_dropoff_differences.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='taxi_zones' name='ogrdirect.1k84vze0torj4g1fbfwtl0ns2dm1'>
+            <connection class='ogrdirect' directory='/Users/nolanknievel/CS/369/final-project/data/taxi_zones_shapefile' filename='taxi_zones.shp' password='' server='' tablename='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.1uawyan0m6hh5o1ewcqq71loxuea' name='2019-01-01_zone_dropoff_differences.csv' table='[2019-01-01_zone_dropoff_differences#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='zone' ordinal='0' />
+              <column datatype='integer' name='actual_trips' ordinal='1' />
+              <column datatype='real' name='expected_trips' ordinal='2' />
+              <column datatype='real' name='deviation' ordinal='3' />
+            </columns>
+          </relation>
+          <relation connection='ogrdirect.1k84vze0torj4g1fbfwtl0ns2dm1' name='taxi_zones.shp' table='[taxi_zones.shp]' type='table'>
+            <columns>
+              <column datatype='integer' name='OBJECTID' ordinal='0' />
+              <column datatype='real' name='Shape_Leng' ordinal='1' />
+              <column datatype='real' name='Shape_Area' ordinal='2' />
+              <column datatype='string' name='zone' ordinal='3' />
+              <column datatype='integer' name='LocationID' ordinal='4' />
+              <column datatype='string' name='borough' ordinal='5' />
+              <column datatype='spatial' name='Geometry' ordinal='6' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Geometry]' value='[taxi_zones.shp].[Geometry]' />
+          <map key='[LocationID]' value='[taxi_zones.shp].[LocationID]' />
+          <map key='[OBJECTID]' value='[taxi_zones.shp].[OBJECTID]' />
+          <map key='[Shape_Area]' value='[taxi_zones.shp].[Shape_Area]' />
+          <map key='[Shape_Leng]' value='[taxi_zones.shp].[Shape_Leng]' />
+          <map key='[actual_trips]' value='[2019-01-01_zone_dropoff_differences.csv].[actual_trips]' />
+          <map key='[borough]' value='[taxi_zones.shp].[borough]' />
+          <map key='[deviation]' value='[2019-01-01_zone_dropoff_differences.csv].[deviation]' />
+          <map key='[expected_trips]' value='[2019-01-01_zone_dropoff_differences.csv].[expected_trips]' />
+          <map key='[zone (taxi_zones.shp)]' value='[taxi_zones.shp].[zone]' />
+          <map key='[zone]' value='[2019-01-01_zone_dropoff_differences.csv].[zone]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[2019-01-01_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zone</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[zone]</local-name>
+            <parent-name>[2019-01-01_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias>zone</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>actual_trips</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[actual_trips]</local-name>
+            <parent-name>[2019-01-01_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias>actual_trips</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>expected_trips</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[expected_trips]</local-name>
+            <parent-name>[2019-01-01_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias>expected_trips</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>deviation</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[deviation]</local-name>
+            <parent-name>[2019-01-01_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias>deviation</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OBJECTID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OBJECTID]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>OBJECTID</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_F386867440A54356A59A37914E210001]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shape_Leng</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shape_Leng]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>Shape_Leng</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_F386867440A54356A59A37914E210001]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shape_Area</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shape_Area]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>Shape_Area</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_F386867440A54356A59A37914E210001]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zone</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[zone (taxi_zones.shp)]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>zone</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[taxi_zones.shp_F386867440A54356A59A37914E210001]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LocationID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LocationID]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>LocationID</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_F386867440A54356A59A37914E210001]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>borough</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[borough]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>borough</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[taxi_zones.shp_F386867440A54356A59A37914E210001]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_F386867440A54356A59A37914E210001]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='percent_change' datatype='real' name='[Calculation_4662457481195520]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='([actual_trips]-[expected_trips]) / [expected_trips]' />
+      </column>
+      <column caption='Location ID' datatype='integer' name='[LocationID]' role='dimension' type='ordinal' />
+      <column caption='Objectid' datatype='integer' name='[OBJECTID]' role='measure' type='quantitative' />
+      <column caption='Shape Area' datatype='real' name='[Shape_Area]' role='measure' type='quantitative' />
+      <column caption='Shape Leng' datatype='real' name='[Shape_Leng]' role='measure' type='quantitative' />
+      <column caption='2019-01-01_zone_dropoff_differences.csv' datatype='table' name='[__tableau_internal_object_id__].[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388]' role='measure' type='quantitative' />
+      <column caption='taxi_zones.shp' datatype='table' name='[__tableau_internal_object_id__].[taxi_zones.shp_F386867440A54356A59A37914E210001]' role='measure' type='quantitative' />
+      <column caption='Actual Trips' datatype='integer' name='[actual_trips]' role='measure' type='quantitative' />
+      <column caption='Borough' datatype='string' name='[borough]' role='dimension' type='nominal' />
+      <column caption='Deviation' datatype='real' name='[deviation]' role='measure' type='quantitative' />
+      <column caption='Expected Trips' datatype='real' name='[expected_trips]' role='measure' type='quantitative' />
+      <column caption='Zone (Taxi Zones.Shp)' datatype='string' name='[zone (taxi_zones.shp)]' role='dimension' type='nominal' />
+      <column caption='Zone' datatype='integer' name='[zone]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/9k/q9k9k3w139xcvty2bxq_tczr0000gn/T/tableau-temp/#TableauTemp_08sgvmw1ph3hst1gazh140o5u1px.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/10/2026 04:33:21 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388' table='[Extract].[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388]' type='table' />
+            <relation name='taxi_zones.shp_F386867440A54356A59A37914E210001' table='[Extract].[taxi_zones.shp_F386867440A54356A59A37914E210001]' type='table' />
+          </relation>
+          <cols>
+            <map key='[Geometry]' value='[taxi_zones.shp_F386867440A54356A59A37914E210001].[Geometry]' />
+            <map key='[LocationID]' value='[taxi_zones.shp_F386867440A54356A59A37914E210001].[LocationID]' />
+            <map key='[OBJECTID]' value='[taxi_zones.shp_F386867440A54356A59A37914E210001].[OBJECTID]' />
+            <map key='[Shape_Area]' value='[taxi_zones.shp_F386867440A54356A59A37914E210001].[Shape_Area]' />
+            <map key='[Shape_Leng]' value='[taxi_zones.shp_F386867440A54356A59A37914E210001].[Shape_Leng]' />
+            <map key='[actual_trips]' value='[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388].[actual_trips]' />
+            <map key='[borough]' value='[taxi_zones.shp_F386867440A54356A59A37914E210001].[borough]' />
+            <map key='[deviation]' value='[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388].[deviation]' />
+            <map key='[expected_trips]' value='[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388].[expected_trips]' />
+            <map key='[zone (taxi_zones.shp)]' value='[taxi_zones.shp_F386867440A54356A59A37914E210001].[zone]' />
+            <map key='[zone]' value='[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388].[zone]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>zone</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[zone]</local-name>
+              <parent-name>[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388]</parent-name>
+              <remote-alias>zone</remote-alias>
+              <ordinal>0</ordinal>
+              <family>2019-01-01_zone_dropoff_differences.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>168</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>actual_trips</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[actual_trips]</local-name>
+              <parent-name>[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388]</parent-name>
+              <remote-alias>actual_trips</remote-alias>
+              <ordinal>1</ordinal>
+              <family>2019-01-01_zone_dropoff_differences.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>108</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>expected_trips</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[expected_trips]</local-name>
+              <parent-name>[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388]</parent-name>
+              <remote-alias>expected_trips</remote-alias>
+              <ordinal>2</ordinal>
+              <family>2019-01-01_zone_dropoff_differences.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>155</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>deviation</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[deviation]</local-name>
+              <parent-name>[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388]</parent-name>
+              <remote-alias>deviation</remote-alias>
+              <ordinal>3</ordinal>
+              <family>2019-01-01_zone_dropoff_differences.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>156</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>OBJECTID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[OBJECTID]</local-name>
+              <parent-name>[taxi_zones.shp_F386867440A54356A59A37914E210001]</parent-name>
+              <remote-alias>OBJECTID</remote-alias>
+              <ordinal>4</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[taxi_zones.shp_F386867440A54356A59A37914E210001]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shape_Leng</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Shape_Leng]</local-name>
+              <parent-name>[taxi_zones.shp_F386867440A54356A59A37914E210001]</parent-name>
+              <remote-alias>Shape_Leng</remote-alias>
+              <ordinal>5</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[taxi_zones.shp_F386867440A54356A59A37914E210001]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shape_Area</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Shape_Area]</local-name>
+              <parent-name>[taxi_zones.shp_F386867440A54356A59A37914E210001]</parent-name>
+              <remote-alias>Shape_Area</remote-alias>
+              <ordinal>6</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[taxi_zones.shp_F386867440A54356A59A37914E210001]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>zone</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[zone (taxi_zones.shp)]</local-name>
+              <parent-name>[taxi_zones.shp_F386867440A54356A59A37914E210001]</parent-name>
+              <remote-alias>zone</remote-alias>
+              <ordinal>7</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>260</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[taxi_zones.shp_F386867440A54356A59A37914E210001]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LocationID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[LocationID]</local-name>
+              <parent-name>[taxi_zones.shp_F386867440A54356A59A37914E210001]</parent-name>
+              <remote-alias>LocationID</remote-alias>
+              <ordinal>8</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>260</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[taxi_zones.shp_F386867440A54356A59A37914E210001]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>borough</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[borough]</local-name>
+              <parent-name>[taxi_zones.shp_F386867440A54356A59A37914E210001]</parent-name>
+              <remote-alias>borough</remote-alias>
+              <ordinal>9</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[taxi_zones.shp_F386867440A54356A59A37914E210001]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Geometry</remote-name>
+              <remote-type>128</remote-type>
+              <local-name>[Geometry]</local-name>
+              <parent-name>[taxi_zones.shp_F386867440A54356A59A37914E210001]</parent-name>
+              <remote-alias>Geometry</remote-alias>
+              <ordinal>10</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>spatial</local-type>
+              <aggregation>Collect</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[taxi_zones.shp_F386867440A54356A59A37914E210001]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='OBJECTID' />
+        <field-sort-custom-order field='Shape_Leng' />
+        <field-sort-custom-order field='Shape_Area' />
+        <field-sort-custom-order field='zone (taxi_zones.shp)' />
+        <field-sort-custom-order field='LocationID' />
+        <field-sort-custom-order field='borough' />
+        <field-sort-custom-order field='Geometry' />
+      </field-sort-info>
+      <object-graph>
+        <objects>
+          <object caption='2019-01-01_zone_dropoff_differences.csv' id='2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388'>
+            <properties context=''>
+              <relation connection='textscan.1uawyan0m6hh5o1ewcqq71loxuea' name='2019-01-01_zone_dropoff_differences.csv' table='[2019-01-01_zone_dropoff_differences#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='zone' ordinal='0' />
+                  <column datatype='integer' name='actual_trips' ordinal='1' />
+                  <column datatype='real' name='expected_trips' ordinal='2' />
+                  <column datatype='real' name='deviation' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388' table='[Extract].[2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388]' type='table' />
+            </properties>
+          </object>
+          <object caption='taxi_zones.shp' id='taxi_zones.shp_F386867440A54356A59A37914E210001'>
+            <properties context=''>
+              <relation connection='ogrdirect.1k84vze0torj4g1fbfwtl0ns2dm1' name='taxi_zones.shp' table='[taxi_zones.shp]' type='table'>
+                <columns>
+                  <column datatype='integer' name='OBJECTID' ordinal='0' />
+                  <column datatype='real' name='Shape_Leng' ordinal='1' />
+                  <column datatype='real' name='Shape_Area' ordinal='2' />
+                  <column datatype='string' name='zone' ordinal='3' />
+                  <column datatype='integer' name='LocationID' ordinal='4' />
+                  <column datatype='string' name='borough' ordinal='5' />
+                  <column datatype='spatial' name='Geometry' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='taxi_zones.shp_F386867440A54356A59A37914E210001' table='[Extract].[taxi_zones.shp_F386867440A54356A59A37914E210001]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[zone]' />
+              <expression op='[LocationID]' />
+            </expression>
+            <first-end-point object-id='2019-01-01_zone_dropoff_differences.csv_007EB1BFDBF24FBD8B44C6396FDF1388' />
+            <second-end-point object-id='taxi_zones.shp_F386867440A54356A59A37914E210001' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+    <datasource caption='2019-07-04_zone_dropoff_differences.csv+ (Multiple Connections)' inline='true' name='federated.1c1csx60wbxi2o14kq2rr1lihgww' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='taxi_zones' name='ogrdirect.1k7i5rt0o7wztt1g8p3p111k71cu'>
+            <connection class='ogrdirect' directory='/Users/nolanknievel/CS/369/final-project/data/taxi_zones_shapefile' filename='taxi_zones.shp' password='' server='' tablename='' />
+          </named-connection>
+          <named-connection caption='2019-07-04_zone_dropoff_differences' name='textscan.10vztyn0x85sjp1a00a2815yi8s7'>
+            <connection class='textscan' directory='/Users/nolanknievel/CS/369/final-project/data' filename='2019-07-04_zone_dropoff_differences.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.10vztyn0x85sjp1a00a2815yi8s7' name='2019-07-04_zone_dropoff_differences.csv' table='[2019-07-04_zone_dropoff_differences#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='zone' ordinal='0' />
+              <column datatype='integer' name='july4_trips' ordinal='1' />
+              <column datatype='real' name='expected_trips' ordinal='2' />
+              <column datatype='real' name='deviation' ordinal='3' />
+            </columns>
+          </relation>
+          <relation connection='ogrdirect.1k7i5rt0o7wztt1g8p3p111k71cu' name='taxi_zones.shp' table='[taxi_zones.shp]' type='table'>
+            <columns>
+              <column datatype='integer' name='OBJECTID' ordinal='0' />
+              <column datatype='real' name='Shape_Leng' ordinal='1' />
+              <column datatype='real' name='Shape_Area' ordinal='2' />
+              <column datatype='string' name='zone' ordinal='3' />
+              <column datatype='integer' name='LocationID' ordinal='4' />
+              <column datatype='string' name='borough' ordinal='5' />
+              <column datatype='spatial' name='Geometry' ordinal='6' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Geometry]' value='[taxi_zones.shp].[Geometry]' />
+          <map key='[LocationID]' value='[taxi_zones.shp].[LocationID]' />
+          <map key='[OBJECTID]' value='[taxi_zones.shp].[OBJECTID]' />
+          <map key='[Shape_Area]' value='[taxi_zones.shp].[Shape_Area]' />
+          <map key='[Shape_Leng]' value='[taxi_zones.shp].[Shape_Leng]' />
+          <map key='[borough]' value='[taxi_zones.shp].[borough]' />
+          <map key='[deviation]' value='[2019-07-04_zone_dropoff_differences.csv].[deviation]' />
+          <map key='[expected_trips]' value='[2019-07-04_zone_dropoff_differences.csv].[expected_trips]' />
+          <map key='[july4_trips]' value='[2019-07-04_zone_dropoff_differences.csv].[july4_trips]' />
+          <map key='[zone (taxi_zones.shp)]' value='[taxi_zones.shp].[zone]' />
+          <map key='[zone]' value='[2019-07-04_zone_dropoff_differences.csv].[zone]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[2019-07-04_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zone</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[zone]</local-name>
+            <parent-name>[2019-07-04_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias>zone</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>july4_trips</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[july4_trips]</local-name>
+            <parent-name>[2019-07-04_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias>july4_trips</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>expected_trips</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[expected_trips]</local-name>
+            <parent-name>[2019-07-04_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias>expected_trips</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>deviation</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[deviation]</local-name>
+            <parent-name>[2019-07-04_zone_dropoff_differences.csv]</parent-name>
+            <remote-alias>deviation</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OBJECTID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OBJECTID]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>OBJECTID</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shape_Leng</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shape_Leng]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>Shape_Leng</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shape_Area</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shape_Area]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>Shape_Area</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zone</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[zone (taxi_zones.shp)]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>zone</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LocationID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LocationID]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>LocationID</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>borough</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[borough]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>borough</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[taxi_zones.shp]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Percent_deviation' datatype='real' name='[Calculation_2319947837808640]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='100*([july4_trips] - [expected_trips]) / [expected_trips]' />
+      </column>
+      <column caption='Location ID' datatype='integer' name='[LocationID]' role='dimension' type='ordinal' />
+      <column caption='Objectid' datatype='integer' name='[OBJECTID]' role='measure' type='quantitative' />
+      <column caption='Shape Area' datatype='real' name='[Shape_Area]' role='measure' type='quantitative' />
+      <column caption='Shape Leng' datatype='real' name='[Shape_Leng]' role='measure' type='quantitative' />
+      <column caption='2019-07-04_zone_dropoff_differences.csv' datatype='table' name='[__tableau_internal_object_id__].[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86]' role='measure' type='quantitative' />
+      <column caption='taxi_zones.shp' datatype='table' name='[__tableau_internal_object_id__].[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]' role='measure' type='quantitative' />
+      <column caption='Borough' datatype='string' name='[borough]' role='dimension' type='nominal' />
+      <column caption='Deviation' datatype='real' name='[deviation]' role='measure' type='quantitative' />
+      <column caption='Expected Trips' datatype='real' name='[expected_trips]' role='measure' type='quantitative' />
+      <column caption='July4 Trips' datatype='integer' name='[july4_trips]' role='measure' type='quantitative' />
+      <column caption='Zone (Taxi Zones.Shp)' datatype='string' name='[zone (taxi_zones.shp)]' role='dimension' type='nominal' />
+      <column caption='Zone' datatype='integer' name='[zone]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/9k/q9k9k3w139xcvty2bxq_tczr0000gn/T/tableau-temp/#TableauTemp_1tvvktm1les2vv18dwyun125uc75.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/10/2026 04:46:39 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86' table='[Extract].[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86]' type='table' />
+            <relation name='taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0' table='[Extract].[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]' type='table' />
+          </relation>
+          <cols>
+            <map key='[Geometry]' value='[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0].[Geometry]' />
+            <map key='[LocationID]' value='[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0].[LocationID]' />
+            <map key='[OBJECTID]' value='[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0].[OBJECTID]' />
+            <map key='[Shape_Area]' value='[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0].[Shape_Area]' />
+            <map key='[Shape_Leng]' value='[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0].[Shape_Leng]' />
+            <map key='[borough]' value='[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0].[borough]' />
+            <map key='[deviation]' value='[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86].[deviation]' />
+            <map key='[expected_trips]' value='[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86].[expected_trips]' />
+            <map key='[july4_trips]' value='[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86].[july4_trips]' />
+            <map key='[zone (taxi_zones.shp)]' value='[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0].[zone]' />
+            <map key='[zone]' value='[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86].[zone]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>zone</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[zone]</local-name>
+              <parent-name>[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86]</parent-name>
+              <remote-alias>zone</remote-alias>
+              <ordinal>0</ordinal>
+              <family>2019-07-04_zone_dropoff_differences.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>158</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>july4_trips</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[july4_trips]</local-name>
+              <parent-name>[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86]</parent-name>
+              <remote-alias>july4_trips</remote-alias>
+              <ordinal>1</ordinal>
+              <family>2019-07-04_zone_dropoff_differences.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>95</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>expected_trips</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[expected_trips]</local-name>
+              <parent-name>[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86]</parent-name>
+              <remote-alias>expected_trips</remote-alias>
+              <ordinal>2</ordinal>
+              <family>2019-07-04_zone_dropoff_differences.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>152</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>deviation</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[deviation]</local-name>
+              <parent-name>[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86]</parent-name>
+              <remote-alias>deviation</remote-alias>
+              <ordinal>3</ordinal>
+              <family>2019-07-04_zone_dropoff_differences.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>153</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>OBJECTID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[OBJECTID]</local-name>
+              <parent-name>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</parent-name>
+              <remote-alias>OBJECTID</remote-alias>
+              <ordinal>4</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shape_Leng</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Shape_Leng]</local-name>
+              <parent-name>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</parent-name>
+              <remote-alias>Shape_Leng</remote-alias>
+              <ordinal>5</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shape_Area</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Shape_Area]</local-name>
+              <parent-name>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</parent-name>
+              <remote-alias>Shape_Area</remote-alias>
+              <ordinal>6</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>zone</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[zone (taxi_zones.shp)]</local-name>
+              <parent-name>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</parent-name>
+              <remote-alias>zone</remote-alias>
+              <ordinal>7</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>260</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LocationID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[LocationID]</local-name>
+              <parent-name>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</parent-name>
+              <remote-alias>LocationID</remote-alias>
+              <ordinal>8</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>260</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>borough</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[borough]</local-name>
+              <parent-name>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</parent-name>
+              <remote-alias>borough</remote-alias>
+              <ordinal>9</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Geometry</remote-name>
+              <remote-type>128</remote-type>
+              <local-name>[Geometry]</local-name>
+              <parent-name>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</parent-name>
+              <remote-alias>Geometry</remote-alias>
+              <ordinal>10</ordinal>
+              <family>taxi_zones.shp</family>
+              <local-type>spatial</local-type>
+              <aggregation>Collect</aggregation>
+              <approx-count>263</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='zone' />
+        <field-sort-custom-order field='july4_trips' />
+        <field-sort-custom-order field='expected_trips' />
+        <field-sort-custom-order field='deviation' />
+        <field-sort-custom-order field='Calculation_2319947837808640' />
+      </field-sort-info>
+      <object-graph>
+        <objects>
+          <object caption='2019-07-04_zone_dropoff_differences.csv' id='2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86'>
+            <properties context=''>
+              <relation connection='textscan.10vztyn0x85sjp1a00a2815yi8s7' name='2019-07-04_zone_dropoff_differences.csv' table='[2019-07-04_zone_dropoff_differences#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='zone' ordinal='0' />
+                  <column datatype='integer' name='july4_trips' ordinal='1' />
+                  <column datatype='real' name='expected_trips' ordinal='2' />
+                  <column datatype='real' name='deviation' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86' table='[Extract].[2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86]' type='table' />
+            </properties>
+          </object>
+          <object caption='taxi_zones.shp' id='taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0'>
+            <properties context=''>
+              <relation connection='ogrdirect.1k7i5rt0o7wztt1g8p3p111k71cu' name='taxi_zones.shp' table='[taxi_zones.shp]' type='table'>
+                <columns>
+                  <column datatype='integer' name='OBJECTID' ordinal='0' />
+                  <column datatype='real' name='Shape_Leng' ordinal='1' />
+                  <column datatype='real' name='Shape_Area' ordinal='2' />
+                  <column datatype='string' name='zone' ordinal='3' />
+                  <column datatype='integer' name='LocationID' ordinal='4' />
+                  <column datatype='string' name='borough' ordinal='5' />
+                  <column datatype='spatial' name='Geometry' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0' table='[Extract].[taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[zone]' />
+              <expression op='[LocationID]' />
+            </expression>
+            <first-end-point object-id='2019-07-04_zone_dropoff_differences.csv_26110DC440D84D9287BC5A3570FA7E86' />
+            <second-end-point object-id='taxi_zones.shp_E6C396BD0381446A82F16B19EAFD19C0' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='4th July Dropoff Deviation'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>4th July Dropoffs % Change</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='2019-07-04_zone_dropoff_differences.csv+ (Multiple Connections)' name='federated.1c1csx60wbxi2o14kq2rr1lihgww' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1c1csx60wbxi2o14kq2rr1lihgww'>
+            <column caption='Percent_deviation' datatype='real' name='[Calculation_2319947837808640]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='100*([july4_trips] - [expected_trips]) / [expected_trips]' />
+            </column>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column caption='Objectid' datatype='integer' name='[OBJECTID]' role='measure' type='quantitative' />
+            <column-instance column='[july4_trips]' derivation='Attribute' name='[attr:july4_trips:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[zone (taxi_zones.shp)]' derivation='Attribute' name='[attr:zone (taxi_zones.shp):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column caption='Expected Trips' datatype='real' name='[expected_trips]' role='measure' type='quantitative' />
+            <column caption='July4 Trips' datatype='integer' name='[july4_trips]' role='measure' type='quantitative' />
+            <column-instance column='[july4_trips]' derivation='Min' name='[min:july4_trips:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2319947837808640]' derivation='None' name='[none:Calculation_2319947837808640:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[OBJECTID]' derivation='None' name='[none:OBJECTID:qk]' pivot='key' type='quantitative' />
+            <column caption='Zone (Taxi Zones.Shp)' datatype='string' name='[zone (taxi_zones.shp)]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[min:july4_trips:qk]' included-values='in-range'>
+            <min>50</min>
+            <max>2729</max>
+          </filter>
+          <slices>
+            <column>[federated.1c1csx60wbxi2o14kq2rr1lihgww].[min:july4_trips:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[Longitude (generated)]' field-type='quantitative' max='-8196742.2360131424' min='-8257077.8882456003' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[Latitude (generated)]' field-type='quantitative' max='4997100.8313306868' min='4955228.5464562951' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='normal' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-blue-green-light' />
+            <format attr='geo-area-type' value='State' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[none:Calculation_2319947837808640:qk]' />
+              <lod column='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[clct:Geometry:nk]' />
+              <lod column='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[none:OBJECTID:qk]' />
+              <tooltip column='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[attr:zone (taxi_zones.shp):nk]' />
+              <tooltip column='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[attr:july4_trips:qk]' />
+              <geometry column='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[clct:Geometry:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1c1csx60wbxi2o14kq2rr1lihgww].[Latitude (generated)]</rows>
+        <cols>[federated.1c1csx60wbxi2o14kq2rr1lihgww].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{C359B4C1-C7BC-439A-AC81-F039C144A607}' />
+    </worksheet>
+    <worksheet name='4th July Pickup Deviation'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>4th July Pickups % Change</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='2019-07-04_zone_dropoff_differences.csv+ (Multiple Connections)' name='federated.1c1csx60wbxi2o14kq2rr1lihgww' />
+            <datasource caption='2019-07-04_zone_pickup_differences.csv+ (Multiple Connections)' name='federated.0kf5c160czdgd31ag7rpv03vlcnb' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0kf5c160czdgd31ag7rpv03vlcnb'>
+            <column caption='percent_deviation' datatype='real' name='[Calculation_2319947838595073]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='100*([july4_trips]-[expected_trips]) / [expected_trips]' />
+            </column>
+            <column caption='Expected Trips' datatype='real' name='[expected_trips]' role='measure' type='quantitative' />
+            <column caption='July4 Trips' datatype='integer' name='[july4_trips]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_2319947838595073]' derivation='Sum' name='[sum:Calculation_2319947838595073:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1c1csx60wbxi2o14kq2rr1lihgww'>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column caption='Location ID' datatype='integer' name='[LocationID]' role='dimension' type='ordinal' />
+            <column-instance column='[july4_trips]' derivation='Attribute' name='[attr:july4_trips:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[zone (taxi_zones.shp)]' derivation='Attribute' name='[attr:zone (taxi_zones.shp):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column caption='July4 Trips' datatype='integer' name='[july4_trips]' role='measure' type='quantitative' />
+            <column-instance column='[july4_trips]' derivation='Min' name='[min:july4_trips:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[LocationID]' derivation='None' name='[none:LocationID:ok]' pivot='key' type='ordinal' />
+            <column caption='Zone (Taxi Zones.Shp)' datatype='string' name='[zone (taxi_zones.shp)]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[min:july4_trips:qk]' included-values='in-range'>
+            <min>50</min>
+            <max>2729</max>
+          </filter>
+          <slices>
+            <column>[federated.1c1csx60wbxi2o14kq2rr1lihgww].[min:july4_trips:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[Longitude (generated)]' field-type='quantitative' max='-8191998.8585049398' min='-8264231.9558706237' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[Latitude (generated)]' field-type='quantitative' max='5002892.8439586591' min='4953783.6197363464' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='normal' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-blue-green-light' />
+            <format attr='geo-area-type' value='State' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0kf5c160czdgd31ag7rpv03vlcnb].[sum:Calculation_2319947838595073:qk]' />
+              <lod column='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[clct:Geometry:nk]' />
+              <lod column='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[none:LocationID:ok]' />
+              <tooltip column='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[attr:july4_trips:qk]' />
+              <tooltip column='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[attr:zone (taxi_zones.shp):nk]' />
+              <geometry column='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[clct:Geometry:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1c1csx60wbxi2o14kq2rr1lihgww].[Latitude (generated)]</rows>
+        <cols>[federated.1c1csx60wbxi2o14kq2rr1lihgww].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{332432EB-7348-407D-8633-D426BE47A2BD}' />
+    </worksheet>
+    <worksheet name='Halloween Dropoff Deviation'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Halloween Dropoffs % Change</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='2019-10-31_zone_dropoff_differences.csv+ (Multiple Connections)' name='federated.1hzk2v31lj2k0y1fqj0ep1uofj9x' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1hzk2v31lj2k0y1fqj0ep1uofj9x'>
+            <column caption='percent_deviation' datatype='real' name='[Calculation_2319947842039811]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='100*([july4_trips] - [expected_trips]) / [expected_trips]' />
+            </column>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column caption='Location ID' datatype='integer' name='[LocationID]' role='dimension' type='ordinal' />
+            <column-instance column='[july4_trips]' derivation='Attribute' name='[attr:july4_trips:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[zone (taxi_zones.shp)]' derivation='Attribute' name='[attr:zone (taxi_zones.shp):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column caption='Expected Trips' datatype='real' name='[expected_trips]' role='measure' type='quantitative' />
+            <column caption='actual_trips' datatype='integer' name='[july4_trips]' role='measure' type='quantitative' />
+            <column-instance column='[july4_trips]' derivation='Min' name='[min:july4_trips:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2319947842039811]' derivation='None' name='[none:Calculation_2319947842039811:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[LocationID]' derivation='None' name='[none:LocationID:ok]' pivot='key' type='ordinal' />
+            <column caption='Zone (Taxi Zones.Shp)' datatype='string' name='[zone (taxi_zones.shp)]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1hzk2v31lj2k0y1fqj0ep1uofj9x].[min:july4_trips:qk]' included-values='in-range'>
+            <min>50</min>
+            <max>8850</max>
+          </filter>
+          <slices>
+            <column>[federated.1hzk2v31lj2k0y1fqj0ep1uofj9x].[min:july4_trips:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1hzk2v31lj2k0y1fqj0ep1uofj9x].[Longitude (generated)]' field-type='quantitative' max='-8204206.1687142048' min='-8248836.3744695419' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1hzk2v31lj2k0y1fqj0ep1uofj9x].[Latitude (generated)]' field-type='quantitative' max='4987272.6468768017' min='4956299.7706378857' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='normal' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-blue-green-light' />
+            <format attr='geo-area-type' value='State' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1hzk2v31lj2k0y1fqj0ep1uofj9x].[none:Calculation_2319947842039811:qk]' />
+              <lod column='[federated.1hzk2v31lj2k0y1fqj0ep1uofj9x].[clct:Geometry:nk]' />
+              <lod column='[federated.1hzk2v31lj2k0y1fqj0ep1uofj9x].[none:LocationID:ok]' />
+              <tooltip column='[federated.1hzk2v31lj2k0y1fqj0ep1uofj9x].[attr:zone (taxi_zones.shp):nk]' />
+              <tooltip column='[federated.1hzk2v31lj2k0y1fqj0ep1uofj9x].[attr:july4_trips:qk]' />
+              <geometry column='[federated.1hzk2v31lj2k0y1fqj0ep1uofj9x].[clct:Geometry:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1hzk2v31lj2k0y1fqj0ep1uofj9x].[Latitude (generated)]</rows>
+        <cols>[federated.1hzk2v31lj2k0y1fqj0ep1uofj9x].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{F927B90B-90C2-499F-B5AD-402313D7C2CC}' />
+    </worksheet>
+    <worksheet name='NYE Dropoff Deviation'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>NYE Dropoffs % Change</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='2019-12-31_zone_pickup_differences.csv+ (Multiple Connections)' name='federated.1km069n05nsyn0105x75c1n9pmja' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1km069n05nsyn0105x75c1n9pmja'>
+            <column caption='percent_deviation' datatype='real' name='[Calculation_2319947843715076]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='100*([actual_trips]-[expected_trips]) / [expected_trips]' />
+            </column>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column caption='Location ID' datatype='integer' name='[LocationID]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[actual_trips]' role='measure' type='quantitative' />
+            <column-instance column='[actual_trips]' derivation='Attribute' name='[attr:actual_trips:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[zone (taxi_zones.shp)]' derivation='Attribute' name='[attr:zone (taxi_zones.shp):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column caption='Expected Trips' datatype='real' name='[expected_trips]' role='measure' type='quantitative' />
+            <column-instance column='[actual_trips]' derivation='Min' name='[min:actual_trips:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2319947843715076]' derivation='None' name='[none:Calculation_2319947843715076:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[LocationID]' derivation='None' name='[none:LocationID:ok]' pivot='key' type='ordinal' />
+            <column caption='Zone (Taxi Zones.Shp)' datatype='string' name='[zone (taxi_zones.shp)]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1km069n05nsyn0105x75c1n9pmja].[min:actual_trips:qk]' included-values='in-range'>
+            <min>50</min>
+            <max>4439</max>
+          </filter>
+          <slices>
+            <column>[federated.1km069n05nsyn0105x75c1n9pmja].[min:actual_trips:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1km069n05nsyn0105x75c1n9pmja].[Longitude (generated)]' field-type='quantitative' max='-8193610.2881027032' min='-8255971.6437510736' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1km069n05nsyn0105x75c1n9pmja].[Latitude (generated)]' field-type='quantitative' max='4995636.0751681849' min='4952357.9742072234' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='normal' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-blue-green-light' />
+            <format attr='geo-area-type' value='State' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1km069n05nsyn0105x75c1n9pmja].[none:Calculation_2319947843715076:qk]' />
+              <lod column='[federated.1km069n05nsyn0105x75c1n9pmja].[clct:Geometry:nk]' />
+              <lod column='[federated.1km069n05nsyn0105x75c1n9pmja].[none:LocationID:ok]' />
+              <tooltip column='[federated.1km069n05nsyn0105x75c1n9pmja].[attr:zone (taxi_zones.shp):nk]' />
+              <tooltip column='[federated.1km069n05nsyn0105x75c1n9pmja].[attr:actual_trips:qk]' />
+              <geometry column='[federated.1km069n05nsyn0105x75c1n9pmja].[clct:Geometry:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1km069n05nsyn0105x75c1n9pmja].[Latitude (generated)]</rows>
+        <cols>[federated.1km069n05nsyn0105x75c1n9pmja].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{8DC3FBE3-23DD-424E-9389-366A8E937BCB}' />
+    </worksheet>
+    <worksheet name='Sheet 5'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>New Year&apos;s Day Dropoffs % Change</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='2019-01-01_zone_dropoff_differences.csv+ (Multiple Connections)' name='federated.1frj9dn0lr16tb18jzglt0tmg2e8' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1frj9dn0lr16tb18jzglt0tmg2e8'>
+            <column caption='percent_change' datatype='real' name='[Calculation_4662457481195520]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='([actual_trips]-[expected_trips]) / [expected_trips]' />
+            </column>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column caption='Location ID' datatype='integer' name='[LocationID]' role='dimension' type='ordinal' />
+            <column caption='Actual Trips' datatype='integer' name='[actual_trips]' role='measure' type='quantitative' />
+            <column-instance column='[actual_trips]' derivation='Attribute' name='[attr:actual_trips:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[zone (taxi_zones.shp)]' derivation='Attribute' name='[attr:zone (taxi_zones.shp):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column caption='Expected Trips' datatype='real' name='[expected_trips]' role='measure' type='quantitative' />
+            <column-instance column='[actual_trips]' derivation='Min' name='[min:actual_trips:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_4662457481195520]' derivation='None' name='[none:Calculation_4662457481195520:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[LocationID]' derivation='None' name='[none:LocationID:ok]' pivot='key' type='ordinal' />
+            <column caption='Zone (Taxi Zones.Shp)' datatype='string' name='[zone (taxi_zones.shp)]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1frj9dn0lr16tb18jzglt0tmg2e8].[min:actual_trips:qk]' included-values='in-range'>
+            <min>30</min>
+            <max>4736</max>
+          </filter>
+          <slices>
+            <column>[federated.1frj9dn0lr16tb18jzglt0tmg2e8].[min:actual_trips:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1frj9dn0lr16tb18jzglt0tmg2e8].[Longitude (generated)]' field-type='quantitative' max='-8199001.2568538552' min='-8260568.984947687' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1frj9dn0lr16tb18jzglt0tmg2e8].[Latitude (generated)]' field-type='quantitative' max='4989067.0047277631' min='4946339.672637579' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1frj9dn0lr16tb18jzglt0tmg2e8].[none:Calculation_4662457481195520:qk]' />
+              <lod column='[federated.1frj9dn0lr16tb18jzglt0tmg2e8].[clct:Geometry:nk]' />
+              <lod column='[federated.1frj9dn0lr16tb18jzglt0tmg2e8].[none:LocationID:ok]' />
+              <tooltip column='[federated.1frj9dn0lr16tb18jzglt0tmg2e8].[attr:zone (taxi_zones.shp):nk]' />
+              <tooltip column='[federated.1frj9dn0lr16tb18jzglt0tmg2e8].[attr:actual_trips:qk]' />
+              <geometry column='[federated.1frj9dn0lr16tb18jzglt0tmg2e8].[clct:Geometry:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1frj9dn0lr16tb18jzglt0tmg2e8].[Latitude (generated)]</rows>
+        <cols>[federated.1frj9dn0lr16tb18jzglt0tmg2e8].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{EF56E31F-1003-4CB9-A3CD-6CA439228B87}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='114'>
+    <window class='worksheet' maximized='true' name='4th July Dropoff Deviation'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.1c1csx60wbxi2o14kq2rr1lihgww].[none:Calculation_2319947837808640:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='1' />
+      </viewpoint>
+      <simple-id uuid='{540F04F0-C0B0-4172-A07A-93513E2AAF3B}' />
+    </window>
+    <window class='worksheet' name='4th July Pickup Deviation'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0kf5c160czdgd31ag7rpv03vlcnb].[sum:Calculation_2319947838595073:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='1' />
+      </viewpoint>
+      <simple-id uuid='{4D9C8D87-77C6-4503-BFE7-A106BFAF063B}' />
+    </window>
+    <window class='worksheet' name='Halloween Dropoff Deviation'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1hzk2v31lj2k0y1fqj0ep1uofj9x].[none:Calculation_2319947842039811:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{C9D6ECD1-08F2-4F1A-B9C1-755B7C57BC30}' />
+    </window>
+    <window class='worksheet' name='NYE Dropoff Deviation'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1km069n05nsyn0105x75c1n9pmja].[none:Calculation_2319947843715076:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='1' />
+      </viewpoint>
+      <simple-id uuid='{47F9C567-1605-45BB-838E-60750985817D}' />
+    </window>
+    <window class='worksheet' name='Sheet 5'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1frj9dn0lr16tb18jzglt0tmg2e8].[none:Calculation_4662457481195520:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{AD4D0B59-4D6C-412E-8096-2970C14C71B7}' />
+    </window>
+  </windows>
+</workbook>
