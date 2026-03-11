@@ -27,8 +27,6 @@ Table description:
 16           total_amount      DOUBLE  YES  None    None  None
 17   congestion_surcharge      DOUBLE  YES  None    None  None
 18            airport_fee      DOUBLE  YES  None    None  None
-
-
 """
 
 
